@@ -37,8 +37,8 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.WXEnvironment;
 import org.apache.weex.WXSDKInstance;
 import org.apache.weex.annotation.Component;
@@ -1745,7 +1745,7 @@ public class WXRecyclerTemplateList extends WXVContainer<BounceRecyclerView> imp
     private Object safeGetListData(int position){
         try{
             return cellDataManager.listData.get(position);
-        }catch (Exception e){return  JSONObject.parseObject("{}");}
+        }catch (Exception e){return  com.alibaba.fastjson2.JSON.parseObject("{}");}
     }
 
     public void  notifyUpdateList(){
@@ -2008,7 +2008,7 @@ public class WXRecyclerTemplateList extends WXVContainer<BounceRecyclerView> imp
                 return (JSONArray) value;
             }
             if(value instanceof String){
-                JSONArray array = JSONArray.parseArray(getAttrs().get(Constants.Name.Recycler.LIST_DATA).toString());
+                JSONArray array = com.alibaba.fastjson2.JSON.parseArray(getAttrs().get(Constants.Name.Recycler.LIST_DATA).toString());
                 return array;
             }
         }catch (Exception e){

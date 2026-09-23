@@ -18,7 +18,7 @@
  */
 package org.apache.weex.el.parse;
 
-import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson2.JSONArray;
 
 import java.util.List;
 

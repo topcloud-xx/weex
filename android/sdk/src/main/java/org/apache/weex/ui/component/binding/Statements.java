@@ -22,8 +22,8 @@ import android.os.Looper;
 import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.WXEnvironment;
 import org.apache.weex.bridge.EventResult;
 import org.apache.weex.bridge.WXBridgeManager;

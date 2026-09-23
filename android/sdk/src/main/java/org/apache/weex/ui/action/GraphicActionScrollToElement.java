@@ -18,7 +18,7 @@
  */
 package org.apache.weex.ui.action;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.WXSDKInstance;
 import org.apache.weex.WXSDKManager;
 import org.apache.weex.ui.component.Scrollable;

@@ -36,9 +36,9 @@ import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.Script;
 import org.apache.weex.WXEnvironment;
 import org.apache.weex.WXSDKEngine;
@@ -1838,7 +1838,7 @@ public class WXBridgeManager implements Callback, BactchExecutor {
         // Find the first line that starts with '//' and convert it to json
         int bundleTypeStart = temp.indexOf("//");
         int bundleTypeEnd = temp.indexOf("\n", bundleTypeStart);
-        JSONObject bundleType = JSONObject.parseObject(
+        JSONObject bundleType = com.alibaba.fastjson2.JSON.parseObject(
             temp.substring(bundleTypeStart+2, bundleTypeEnd));
         String type = bundleType.getString(FRAMEWORK);
         if(VUE.equalsIgnoreCase(type)){

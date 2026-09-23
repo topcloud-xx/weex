@@ -22,6 +22,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Rect;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Handler.Callback;
 import android.os.Message;
@@ -90,10 +91,15 @@ public class WXScrollView extends ScrollView implements Callback, IWXScroller,
     super(context);
     mScrollViewListeners = new ArrayList<>();
     init();
-    try {
-      WXReflectionUtils.setValue(this, "mMinimumVelocity", 5);
-    } catch (Exception e) {
-      WXLogUtils.e("[WXScrollView] WXScrollView: ", e);
+    // mMinimumVelocity is a hidden (non-SDK) field of ScrollView and cannot be
+    // accessed via reflection on Android 9+ (targetSdk >= P). Skip on modern
+    // Android where the access is denied anyway.
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.P) {
+      try {
+        WXReflectionUtils.setValue(this, "mMinimumVelocity", 5);
+      } catch (Exception e) {
+        WXLogUtils.e("[WXScrollView] WXScrollView: ", e);
+      }
     }
   }
 

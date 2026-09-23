@@ -18,7 +18,7 @@
  */
 package org.apache.weex.dom.binding;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 
 /**
  * Created by furture on 2018/5/8.
@@ -41,7 +41,7 @@ public class JSONUtils {
         if(json instanceof JSONObject){
             return (JSONObject) json;
         }
-        return JSONObject.parseObject(json.toString());
+        return com.alibaba.fastjson2.JSON.parseObject(json.toString());
     }
 
 

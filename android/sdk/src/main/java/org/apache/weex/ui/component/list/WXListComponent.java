@@ -22,7 +22,7 @@ import android.content.Context;
 import android.support.v4.util.ArrayMap;
 import android.support.v7.widget.PagerSnapHelper;
 import android.text.TextUtils;
-import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson2.JSON;
 import org.apache.weex.WXSDKInstance;
 import org.apache.weex.annotation.Component;
 import org.apache.weex.common.Constants;

@@ -19,7 +19,7 @@
 package org.apache.weex;
 import android.util.Pair;
 import android.text.TextUtils;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.adapter.IWXUserTrackAdapter;
 import org.apache.weex.bridge.ModuleFactory;
 import org.apache.weex.bridge.WXEaglePlugin;

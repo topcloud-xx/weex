@@ -41,7 +41,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ScrollView;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.adapter.IDrawableLoader;
 import org.apache.weex.adapter.IWXConfigAdapter;
 import org.apache.weex.adapter.IWXHttpAdapter;
@@ -91,7 +91,6 @@ import org.apache.weex.utils.WXExceptionUtils;
 import org.apache.weex.utils.WXFileUtils;
 import org.apache.weex.utils.WXJsonUtils;
 import org.apache.weex.utils.WXLogUtils;
-import org.apache.weex.utils.WXReflectionUtils;
 import org.apache.weex.utils.WXUtils;
 import org.apache.weex.utils.WXViewUtils;
 import org.apache.weex.utils.cache.RegisterCache;
@@ -1906,8 +1905,9 @@ public class WXSDKInstance implements IWXActivityStateListener,View.OnLayoutChan
         }
 
         cViewGroup.removeViews(0, ((ViewGroup) rootView).getChildCount());
-        // Ensure that the viewgroup's status to be normal
-        WXReflectionUtils.setValue(rootView, "mChildrenCount", 0);
+        // removeViews already resets the ViewGroup's internal child count to 0.
+        // Setting the hidden field mChildrenCount via reflection is denied on
+        // Android 9+ (non-SDK interface restriction), so rely on removeViews.
 
       }
       if(rootView instanceof Destroyable){
@@ -2392,10 +2392,10 @@ public class WXSDKInstance implements IWXActivityStateListener,View.OnLayoutChan
   public String getTemplateInfo() {
     String template = getTemplate();
     if(template == null){
-      return " template md5 null ,httpHeader:" + JSONObject.toJSONString(responseHeaders);
+      return " template md5 null ,httpHeader:" + com.alibaba.fastjson2.JSON.toJSONString(responseHeaders);
     }
     if(TextUtils.isEmpty(template)){
-      return " template md5  length 0 ,httpHeader" + JSONObject.toJSONString(responseHeaders);
+      return " template md5  length 0 ,httpHeader" + com.alibaba.fastjson2.JSON.toJSONString(responseHeaders);
     }
     try {
       byte[] bts = template.getBytes("UTF-8");
@@ -2409,7 +2409,7 @@ public class WXSDKInstance implements IWXActivityStateListener,View.OnLayoutChan
       responseHeaders.put(SOURCE_TEMPLATE_BASE64_MD5, sourceBase64MD5List);
       return " template md5 " + sourceMD5 + " length " +   bts.length
               + " base64 md5 " + sourceBase64MD5
-              + " response header " + JSONObject.toJSONString(responseHeaders);
+              + " response header " + com.alibaba.fastjson2.JSON.toJSONString(responseHeaders);
     } catch (Exception e) {
       return "template md5 getBytes error";
     }

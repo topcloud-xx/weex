@@ -39,7 +39,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.WXSDKInstance;
 import org.apache.weex.WXSDKManager;
 import org.apache.weex.annotation.JSMethod;

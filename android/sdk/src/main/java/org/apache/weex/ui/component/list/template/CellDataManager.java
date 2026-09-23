@@ -22,7 +22,7 @@ package org.apache.weex.ui.component.list.template;
 import android.support.v4.util.ArrayMap;
 import android.text.TextUtils;
 
-import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson2.JSONArray;
 import org.apache.weex.WXEnvironment;
 import org.apache.weex.bridge.WXBridgeManager;
 import org.apache.weex.utils.WXUtils;

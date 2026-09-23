@@ -23,7 +23,7 @@ import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.Menu;
 
-import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson2.JSONArray;
 
 import org.apache.weex.WXEaglePluginManager;
 import org.apache.weex.WXSDKInstance;

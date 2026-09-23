@@ -69,13 +69,13 @@ ext {
     minSdkVersion = 21
     targetSdkVersion = 28
     supportLibVersion = "28.0.0"
-    fastjsonLibVersion = "1.1.70.android"
+    fastjsonLibVersion = "2.0.65.android8"
     //Default value for disableCov is false
     disableCov = project.hasProperty("disableCov") && disableCov.equals("true")
     useApachePackageName = project.hasProperty('apachePackageName') ? project.property('apachePackageName').toBoolean() : false
     unbundlingJSC = project.hasProperty('unbundlingJSC') ? project.property('unbundlingJSC').toBoolean() : false
     artifactName = project.hasProperty('artifactName') ? project.property('artifactName') : 'weex_sdk'
     groupId = project.hasProperty('groupId') ? project.property('groupId') : 'com.taobao.android'
-    weexVersion = project.hasProperty('weexVersion') ? project.getProperty('weexVersion') : '0.28.0.1'
+    weexVersion = project.hasProperty('weexVersion') ? project.getProperty('weexVersion') : '0.30.0.1'
     implementFromWeex = true
 }

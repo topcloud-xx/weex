@@ -38,7 +38,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.WXSDKInstance;
 import org.apache.weex.WXSDKManager;
 import org.apache.weex.common.Constants;
@@ -86,7 +86,7 @@ public class GraphicActionAnimation extends BasicGraphicAction {
     this.styleNeedInit = true;
     this.callback = callBack;
     if (!TextUtils.isEmpty(animation)) {
-      this.mAnimationBean = JSONObject.parseObject(animation, WXAnimationBean.class);
+      this.mAnimationBean = com.alibaba.fastjson2.JSON.parseObject(animation, WXAnimationBean.class);
     }
   }
   public GraphicActionAnimation(@NonNull WXSDKInstance instance, @NonNull String ref, @NonNull WXAnimationBean animationBean,

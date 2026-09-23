@@ -21,9 +21,9 @@ package org.apache.weex.bridge;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONArray;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.WXEnvironment;
 import org.apache.weex.WXSDKInstance;
 import org.apache.weex.WXSDKManager;
@@ -270,7 +270,7 @@ import java.util.Map;
   @Override
   public int callNative(String instanceId, String tasks, String callback) {
     try{
-      return callNative(instanceId, JSONArray.parseArray(tasks), callback);
+      return callNative(instanceId, com.alibaba.fastjson2.JSON.parseArray(tasks), callback);
     }catch (Exception e){
       WXLogUtils.e(TAG, "callNative throw exception: " + WXLogUtils.getStackTrace(e));
       return IWXBridge.INSTANCE_RENDERING;

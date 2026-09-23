@@ -21,7 +21,7 @@ package org.apache.weex.dom;
 import android.support.v4.util.ArrayMap;
 
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.dom.binding.ELUtils;
 import org.apache.weex.dom.binding.JSONUtils;
 

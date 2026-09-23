@@ -18,7 +18,7 @@
  */
 package org.apache.weex.bridge;
 import android.support.annotation.NonNull;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.InitConfig;
 import org.apache.weex.ui.IFComponentHolder;
 import java.util.Map;

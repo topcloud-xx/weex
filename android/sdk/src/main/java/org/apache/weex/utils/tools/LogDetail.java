@@ -21,7 +21,7 @@ package org.apache.weex.utils.tools;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.alibaba.fastjson.annotation.JSONField;
+import com.alibaba.fastjson2.annotation.JSONField;
 import org.apache.weex.WXEnvironment;
 import java.util.Locale;
 

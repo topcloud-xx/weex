@@ -18,13 +18,26 @@
  */
 package org.apache.weex.ui.component.list.template;
 
-import com.alibaba.fastjson.JSONAware;
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONWriter;
+import com.alibaba.fastjson2.writer.ObjectWriter;
+
+import java.lang.reflect.Type;
 
 /**
  * position render state, when render state change, position changed
  * Created by furture on 2018/2/2.
  */
-public class PositionRef extends  Number implements JSONAware {
+public class PositionRef extends  Number {
+
+    static {
+        JSON.register(PositionRef.class, new ObjectWriter<PositionRef>() {
+            @Override
+            public void write(JSONWriter jsonWriter, Object object, Object fieldName, Type fieldType, long features) {
+                jsonWriter.writeInt32(((PositionRef) object).getPosition());
+            }
+        });
+    }
 
     private CellRenderState renderState;
 
@@ -64,7 +77,6 @@ public class PositionRef extends  Number implements JSONAware {
         return String.valueOf(getPosition());
     }
 
-    @Override
     public String toJSONString() {
         return String.valueOf(getPosition());
     }

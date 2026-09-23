@@ -23,8 +23,8 @@ import static org.apache.weex.http.WXHttpUtil.KEY_USER_AGENT;
 import android.net.Uri;
 import android.text.TextUtils;
 
-import com.alibaba.fastjson.JSONException;
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONException;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.WXEnvironment;
 import org.apache.weex.WXSDKInstance;
 import org.apache.weex.WXSDKManager;
@@ -213,7 +213,7 @@ public class WXStreamModule extends WXModule {
 
   Object parseData(String data, Options.Type type) throws JSONException{
     if( type == Options.Type.json){
-      return JSONObject.parse(data);
+      return com.alibaba.fastjson2.JSON.parse(data);
     }else if( type == Options.Type.jsonp){
       if(data == null || data.isEmpty()) {
         return new JSONObject();
@@ -225,7 +225,7 @@ public class WXStreamModule extends WXModule {
       }
 
       data = data.substring(b,e);
-      return JSONObject.parse(data);
+      return com.alibaba.fastjson2.JSON.parse(data);
     }else {
       return data;
     }

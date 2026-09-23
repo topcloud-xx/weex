@@ -48,7 +48,7 @@ public class WXGlobalEventReceiver extends BroadcastReceiver {
     String params = intent.getStringExtra(EVENT_PARAMS);
     HashMap<String, Object> maps = null;
     try {
-      maps = com.alibaba.fastjson.JSON.parseObject(params, HashMap.class);
+      maps = com.alibaba.fastjson2.JSON.parseObject(params, HashMap.class);
       mWXSDKInstance.fireGlobalEventCallback(eventName, maps);
     } catch (Exception e) {
       WXLogUtils.e("global-receive",e);

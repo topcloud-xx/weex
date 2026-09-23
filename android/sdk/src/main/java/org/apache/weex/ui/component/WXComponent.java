@@ -56,7 +56,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewOverlay;
 import android.widget.FrameLayout;
-import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson2.JSONArray;
 import org.apache.weex.ComponentObserver;
 import org.apache.weex.IWXActivityStateListener;
 import org.apache.weex.WXEnvironment;

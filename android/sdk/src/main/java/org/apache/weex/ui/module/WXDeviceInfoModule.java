@@ -18,7 +18,7 @@
  */
 package org.apache.weex.ui.module;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import org.apache.weex.annotation.JSMethod;
 import org.apache.weex.bridge.JSCallback;
 import org.apache.weex.common.WXModule;
